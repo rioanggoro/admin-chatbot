@@ -9,10 +9,6 @@ import {
   ShoppingCart,
   AlertCircle,
   Package2,
-  Users,
-  Settings,
-  LogOut,
-  ChevronRight,
   Bell,
   Search,
 } from 'lucide-react';
@@ -137,7 +133,21 @@ export default function Dashboard() {
   );
 }
 
-function StatsCard({ title, value, icon, trend, percent, color }) {
+function StatsCard({
+  title,
+  value,
+  icon,
+  trend,
+  percent,
+  color,
+}: {
+  title: string;
+  value: number;
+  icon: React.ReactElement;
+  trend: 'up' | 'down';
+  percent: number;
+  color: 'blue' | 'green' | 'red' | 'purple';
+}) {
   const colorClasses = {
     blue: {
       light: 'bg-blue-50 text-blue-600',
@@ -184,7 +194,9 @@ function StatsCard({ title, value, icon, trend, percent, color }) {
           <div
             className={`w-12 h-12 rounded-lg flex items-center justify-center ${colorClasses[color].light} dark:bg-opacity-20`}
           >
-            {React.cloneElement(icon, { className: 'h-6 w-6' })}
+            {React.cloneElement(icon, {
+              className: 'h-6 w-6',
+            } as React.HTMLAttributes<HTMLDivElement>)}
           </div>
 
           <div
