@@ -46,6 +46,11 @@ export default function Sidebar() {
       icon: <Users className="h-4 w-4" />,
       href: '/admin/pembelian/history',
     },
+    {
+      label: 'Chatbot',
+      icon: <Users className="h-4 w-4" />,
+      href: '/chatbot',
+    },
   ];
 
   return (
@@ -142,31 +147,7 @@ export default function Sidebar() {
             'absolute bottom-0 w-full border-t border-slate-200 dark:border-slate-700 p-2',
             collapsed ? 'px-2' : 'px-4'
           )}
-        >
-          {collapsed ? (
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="w-full h-10 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
-                >
-                  <LogOut className="h-4 w-4" />
-                  <span className="sr-only">Keluar</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="right">Keluar</TooltipContent>
-            </Tooltip>
-          ) : (
-            <Button
-              variant="ghost"
-              className="w-full justify-start h-10 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
-            >
-              <LogOut className="mr-3 h-4 w-4" />
-              Keluar
-            </Button>
-          )}
-        </div>
+        ></div>
       </aside>
     </TooltipProvider>
   );
